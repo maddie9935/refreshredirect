@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Intentional accessibility error: this page reloads itself every 30 seconds. -->
+  <meta http-equiv="refresh" content="30">
+  <title>Fall 2026 waitlist (automatic refresh error)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-name" href="index.html">Northfield University</a>
+      <span class="site-section">Office of the Registrar</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Fall 2026 waitlist</h1>
+    <p class="lede">Check open seats for the courses on your waitlist. When a seat opens, add the course to your schedule.</p>
+    <p class="meta" id="updated"></p>
+
+    <section class="panel" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a course</h2>
+      <form id="addForm">
+        <div class="field">
+          <label for="courseNumber">Course number <span class="hint">For example, HIST 210</span></label>
+          <input type="text" id="courseNumber" autocomplete="off">
+        </div>
+        <button type="submit">Add course</button>
+        <p class="status" id="addStatus" role="status"></p>
+      </form>
+    </section>
+
+    <h2>Courses on your waitlist</h2>
+    <ul class="courses">
+      <li>
+        <h3>BIO 140: Introduction to Marine Biology</h3>
+        <p class="meta">Mon/Wed 9:00 to 10:15 AM</p>
+        <p>Explore ocean ecosystems, from tide pools to the deep sea. Includes two Saturday field trips to the coast.</p>
+        <p class="seats" data-cap="30" id="seats-0">Checking seats</p>
+      </li>
+      <li>
+        <h3>HIST 210: The American West</h3>
+        <p class="meta">Tue/Thu 11:00 AM to 12:15 PM</p>
+        <p>Examine settlement, conflict, and myth in the American West from 1800 to 1920, using letters, maps, and photographs.</p>
+        <p class="seats" data-cap="35" id="seats-1">Checking seats</p>
+      </li>
+      <li>
+        <h3>PSYC 230: Cognitive Psychology</h3>
+        <p class="meta">Mon/Wed/Fri 1:00 to 1:50 PM</p>
+        <p>Study how people perceive, remember, and make decisions. Prerequisite: PSYC 101.</p>
+        <p class="seats" data-cap="40" id="seats-2">Checking seats</p>
+      </li>
+      <li>
+        <h3>ART 115: Drawing I</h3>
+        <p class="meta">Tue/Thu 2:00 to 4:45 PM</p>
+        <p>Build observational drawing skills with pencil, charcoal, and ink. Supply fee applies.</p>
+        <p class="seats" data-cap="18" id="seats-3">Checking seats</p>
+      </li>
+      <li>
+        <h3>CS 150: Programming for Everyone</h3>
+        <p class="meta">Mon/Wed 3:00 to 4:15 PM</p>
+        <p>Learn to write simple programs in Python. No experience needed.</p>
+        <p class="seats" data-cap="45" id="seats-4">Checking seats</p>
+      </li>
+      <li>
+        <h3>ENGL 205: Writing About Place</h3>
+        <p class="meta">Fri 10:00 AM to 12:45 PM</p>
+        <p>Write essays about the places that shape us, with workshops and one-on-one feedback.</p>
+        <p class="seats" data-cap="20" id="seats-5">Checking seats</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer>Demo page for accessibility testing. This page refreshes automatically. <a href="index.html">All demo pages</a></footer>
+  <script>
+    function fmtTime(d) {
+      return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" });
+    }
+    function updateSeats() {
+      var open = 0;
+      document.querySelectorAll(".seats").forEach(function (el) {
+        var cap = Number(el.dataset.cap);
+        var n = Math.random() < 0.45 ? Math.floor(Math.random() * 4) + 1 : 0;
+        if (n > 0) open++;
+        el.textContent = n > 0 ? "Open seats: " + n + " of " + cap : "Full: 0 of " + cap + " seats open";
+        el.className = "seats " + (n > 0 ? "open" : "full");
+      });
+      document.getElementById("updated").textContent = "Seat counts last updated at " + fmtTime(new Date()) + ".";
+      return open;
+    }
+    updateSeats();
+    document.getElementById("addForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = document.getElementById("courseNumber").value.trim();
+      document.getElementById("addStatus").textContent = v
+        ? v + " was added to your schedule. This is a demo, so nothing was saved."
+        : "Enter a course number to add a course.";
+    });
+  </script>
+</body>
+</html>

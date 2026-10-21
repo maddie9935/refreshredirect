@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refresh and redirect demo pages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-name" href="index.html">Northfield University</a>
+      <span class="site-section">Office of the Registrar</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Refresh and redirect demo pages</h1>
+    <p class="lede">These pages show what automatic page refreshes and redirects are like for users, before and after the fix.</p>
+
+    <h2>Automatic refresh</h2>
+    <ul class="demo-list">
+      <li><a href="waitlist.html">Waitlist page with an automatic refresh</a><br>Reloads itself every 30 seconds. Seat counts and the "last updated" time change on each reload, and anything typed in the form is erased.</li>
+      <li><a href="waitlist-fixed.html">Waitlist page, fixed</a><br>No automatic refresh. Seat counts update only when you select "Check for open seats."</li>
+    </ul>
+
+    <h2>Automatic redirect</h2>
+    <ul class="demo-list">
+      <li><a href="waiting-room.html">Waiting room with an automatic redirect</a><br>Sends you to the registration form 20 seconds after the page loads, without warning.</li>
+      <li><a href="waiting-room-fixed.html">Waiting room, fixed</a><br>After 20 seconds, announces "It's your turn" and shows a link. You choose when to continue.</li>
+    </ul>
+  </main>
+
+  <footer>Demo pages for accessibility testing. <a href="index.html">All demo pages</a></footer>
+</body>
+</html>

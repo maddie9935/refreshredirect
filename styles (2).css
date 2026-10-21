@@ -1,0 +1,130 @@
+:root {
+  --brand: #6e1e2b;
+  --brand-dark: #4f141e;
+  --stone: #f5f2ee;
+  --card: #ffffff;
+  --line: #ddd5cb;
+  --ink: #1f1a17;
+  --ink-soft: #5a524c;
+  --gold: #d9a521;
+  --open: #1d6b3a;
+  --full: #8a2a1c;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--stone); }
+
+body {
+  margin: 0;
+  font-family: "Public Sans", "Segoe UI", Verdana, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.skip-link {
+  position: absolute; left: 1rem; top: -3rem;
+  background: var(--ink); color: #fff;
+  padding: .5rem .9rem; z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+.site-header {
+  background: var(--brand);
+  border-top: 6px solid var(--gold);
+  color: #fff;
+}
+.site-header .inner {
+  max-width: 48rem; margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: .25rem 1.5rem;
+}
+.site-name { font-weight: 700; font-size: 1.2rem; color: #fff; text-decoration: none; }
+.site-section { color: #f3dfe2; font-size: .95rem; }
+
+main { max-width: 48rem; margin: 0 auto; padding: 2.25rem 1.25rem 3rem; }
+
+h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); line-height: 1.15; margin: 0 0 .5rem; color: var(--brand-dark); }
+h2 { font-size: 1.35rem; margin: 2.25rem 0 .75rem; }
+h3 { font-size: 1.1rem; margin: 0 0 .25rem; }
+p { margin: 0 0 1rem; max-width: 38rem; }
+.lede { color: var(--ink-soft); font-size: 1.1rem; }
+.meta { color: var(--ink-soft); font-size: .95rem; }
+
+a { color: var(--brand); }
+a:hover { color: var(--brand-dark); }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* Course list */
+.courses { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.courses li { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+.courses p { margin: 0 0 .35rem; }
+.seats { font-weight: 700; }
+.seats.open { color: var(--open); }
+.seats.full { color: var(--full); }
+
+/* Panels and forms */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--brand);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.panel h2 { margin-top: 0; }
+.field { margin-bottom: 1rem; }
+label { display: block; font-weight: 700; margin-bottom: .3rem; }
+input[type="text"] {
+  font: inherit; width: 100%; max-width: 16rem;
+  padding: .55rem .7rem;
+  border: 2px solid #8b827a; border-radius: 4px;
+  background: #fff; color: var(--ink);
+}
+.hint { display: block; font-weight: 400; color: var(--ink-soft); font-size: .95rem; }
+button, .button-link {
+  display: inline-block;
+  font: inherit; font-weight: 700;
+  padding: .6rem 1.2rem;
+  border: 2px solid var(--brand); border-radius: 4px;
+  background: var(--brand); color: #fff;
+  cursor: pointer; text-decoration: none;
+}
+button:hover, .button-link:hover { background: var(--brand-dark); border-color: var(--brand-dark); color: #fff; }
+button.secondary { background: #fff; color: var(--brand); }
+button.secondary:hover { background: #f7ecee; color: var(--brand-dark); }
+
+.status { font-weight: 700; margin: .75rem 0 0; }
+.status:empty { display: none; }
+
+/* Waiting room */
+.queue {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.queue .big { font-size: 1.5rem; font-weight: 700; margin: 0 0 .25rem; color: var(--brand-dark); }
+.turn {
+  background: #fff7dc;
+  border: 2px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.turn:empty { display: none; }
+.turn p { margin: 0 0 .75rem; font-size: 1.2rem; font-weight: 700; }
+
+ol.steps { padding-left: 1.4rem; max-width: 38rem; }
+ol.steps li { margin-bottom: .6rem; }
+
+footer {
+  max-width: 48rem; margin: 0 auto 2.5rem;
+  padding: 1.25rem; border-top: 1px solid var(--line);
+  font-size: .95rem; color: var(--ink-soft);
+}
+
+.demo-list { list-style: none; padding: 0; margin: 0; }
+.demo-list li { padding: .9rem 0; border-bottom: 1px solid var(--line); }
+.demo-list a { font-weight: 700; }

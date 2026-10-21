@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Intentional accessibility error: this page sends users to register.html after 20 seconds without warning. -->
+  <meta http-equiv="refresh" content="20;url=register.html">
+  <title>Registration waiting room (automatic redirect error)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="site-name" href="index.html">Northfield University</a>
+      <span class="site-section">Office of the Registrar</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Registration waiting room</h1>
+    <p class="lede">Your fall 2026 registration window opens soon. Keep this page open while you wait.</p>
+
+    <section class="queue" aria-labelledby="queue-heading">
+      <h2 id="queue-heading" class="big">You're in line.</h2>
+      <p>Estimated wait: about 1 minute.</p>
+    </section>
+
+    <h2>Before you register</h2>
+    <ol class="steps">
+      <li>Have your list of course numbers ready, including a few backup choices in case your first choices are full.</li>
+      <li>Check that you've met the prerequisites for each course. Courses with unmet prerequisites can't be added.</li>
+      <li>Make sure your courses don't overlap. The system won't let you register for two courses that meet at the same time.</li>
+      <li>If a course is full, you can join its waitlist. You'll be notified by email if a seat opens.</li>
+      <li>Once your window opens, you have 15 minutes to complete your registration before your spot passes to the next student.</li>
+    </ol>
+    <p>Questions? Contact the Office of the Registrar at registrar@northfield.example or 555-0142.</p>
+  </main>
+
+  <footer>Demo page for accessibility testing. This page redirects automatically. <a href="index.html">All demo pages</a></footer>
+</body>
+</html>
